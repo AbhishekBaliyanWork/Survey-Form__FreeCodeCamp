@@ -1,0 +1,203 @@
+/*---------- Custom Variables ------------------ */
+:root {
+    --bg-color-primary: white;
+    --text-color-primary: rgba(0, 0, 0, 0.5);
+}
+
+/*---------- BASE ------------ */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 1 rem = 10px; 10px/16px = 62.5% */
+    text-rendering: optimizeLegibility;
+    list-style: none;
+}
+
+body {
+    box-sizing: border-box;
+    min-width: 330px;
+}
+
+ul {
+    list-style: none;
+}
+
+/*---------- TYPOGRAPHY ------------ */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 1.6rem;
+    color: var(--text-color-primary);
+}
+
+/*---------- MAIN ------------ */
+#main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem;
+    /* text-align: center; */
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+}
+
+#container {
+    padding: 3rem 4.5rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: var(--bg-color-primary);
+}
+
+#title {
+    font-size: 5rem;
+    font-weight: 600;
+    /* letter-spacing: 0.5rem; */
+    color: #00dbde;
+    animation-name: bg-change;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    transition-duration: .2s;
+    text-align: center;
+}
+
+#description {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+/*---------- INPUT - TEXT/EMAIL/Number ------------ */
+
+.row {
+    position: relative;
+    margin-bottom: 5rem;
+    
+}
+
+.hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.text-label {
+    position: absolute;
+    top: -2.4rem;
+    font-size: 1.7rem;
+    display: block;
+    text-align: left;
+    /* margin-bottom: 1rem; */
+    /* margin-left: 4.2rem; */
+    transition: all .2s;
+    /* transform: translateY(4rem); */
+}
+.text-input {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    font-size: 3rem;
+    outline: none;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: all .2s;
+}
+
+.text-input:focus {
+    border-bottom: 2px solid #00dbde;
+}
+
+.text-input:focus:valid {
+    border-bottom: 2px solid #00dbde;
+}
+
+.text-input:focus:invalid {
+    border-bottom: 2px solid #fc00ff;
+}
+
+.text-input:placeholder-shown + .text-label {
+    transform: translateY(2.5rem);
+    /* transition: all .2s; */
+    visibility: hidden;
+    /* transform: scale(2); */
+    opacity: 0;
+    font-size: 3rem;
+}
+
+/*---------- DROPDOWN ------------ */
+.dropdown {
+    padding: 1rem;
+}
+
+.label-wrapper {
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.input-wrapper {
+    letter-spacing: 1px;
+}
+
+
+/*---------- TEXTAREA ------------ */
+textarea {
+    width: 100%;
+    padding: 1.5rem;
+    max-width: 100%;
+    font-size: 2rem !important;
+}
+
+
+/*---------- SUBMIT ------------ */
+#submit {
+    display: block;
+    margin: 0 auto;
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    border-radius: 10rem;
+    background-color: #1b70847d;
+    color: #fff;
+}
+
+
+@keyframes bg-change {
+    0% {
+        color: rgb(207, 55, 118);
+    }
+    25% {
+        color: rgb(84, 37, 145);
+    }
+    50% {
+        color: rgb(43, 43, 196);
+    }
+    75% {
+        color: rgb(29, 148, 92)
+    }
+    100% {
+        color: rgb(236, 222, 19);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 56.25%; /* 1 rem = 9px; 9/16 = 56.25%; */
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 50%; /* 1 rem = 8px; 8/16 = 50%; */
+    }
+}
